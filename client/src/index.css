@@ -1,0 +1,467 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+  color: #222;
+  line-height: 1.5;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  background: #6c5ce7;
+  color: white;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.header p {
+  font-size: 16px;
+  opacity: 0.95;
+  margin-bottom: 14px;
+}
+
+.currency-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.currency-selector label {
+  font-weight: 600;
+}
+
+.currency-selector select {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 6px;
+  background: white;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+  max-width: 1150px;
+  margin: 35px auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   SUMMARY CARDS
+========================= */
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  color: #666;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.expense-section {
+  background: white;
+  padding: 28px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.expense-section h2 {
+  font-size: 22px;
+  margin-bottom: 22px;
+  color: #222;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.expense-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.expense-form input,
+.expense-form select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #dcdfe6;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.expense-form input:focus,
+.expense-form select:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+.expense-form input::placeholder {
+  color: #999;
+}
+
+/* Main form buttons */
+
+.expense-form button {
+  width: 100%;
+  padding: 13px 18px;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.expense-form button:hover {
+  background: #5849c4;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   BUDGET
+========================= */
+
+.budget-progress {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.budget-progress .category-header {
+  margin-bottom: 10px;
+}
+
+.budget-progress p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* =========================
+   PROGRESS BARS
+========================= */
+
+.progress-background {
+  width: 100%;
+  height: 10px;
+  background: #eeeeee;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #6c5ce7;
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+/* =========================
+   EXPENSE ANALYTICS
+========================= */
+
+.category-analytics {
+  margin-top: 20px;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+.category-header strong {
+  font-size: 15px;
+  color: #333;
+}
+
+.category-header span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =========================
+   EXPENSE REPORT
+========================= */
+
+/* Summary inside Expense Report */
+
+.expense-section > .summary {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 0;
+}
+
+.expense-section > .summary .card {
+  padding: 20px;
+}
+
+/* =========================
+   RECENT EXPENSES
+========================= */
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 20px;
+  margin-top: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fafafa;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.expense-item:hover {
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Expense information */
+
+.expense-item h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+  color: #222;
+}
+
+.expense-item p {
+  margin: 4px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.expense-item small {
+  color: #999;
+  font-size: 13px;
+}
+
+/* Right side */
+
+.expense-item > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.expense-item strong {
+  font-size: 17px;
+  color: #222;
+  margin-right: 5px;
+}
+
+/* Edit/Delete buttons */
+
+.expense-item button {
+  border: none;
+  color: white;
+  padding: 8px 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  background: #6c5ce7;
+  transition: background 0.2s ease;
+}
+
+.expense-item button:hover {
+  background: #5849c4;
+}
+
+.expense-item button:last-child {
+  background: #dc3545;
+}
+
+.expense-item button:last-child:hover {
+  background: #b02a37;
+}
+
+/* =========================
+   SPLIT BILL RESULT
+========================= */
+
+.split-result {
+  margin-top: 25px;
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.split-result h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.split-result p {
+  margin: 7px 0;
+  color: #555;
+}
+
+.split-result h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* =========================
+   EMPTY MESSAGE
+========================= */
+
+.empty-message {
+  color: #888;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1000px) {
+  .summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin: 25px auto;
+    padding: 0 15px;
+  }
+
+  .header {
+    padding: 28px 15px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .expense-form {
+    grid-template-columns: 1fr;
+  }
+
+  .expense-section > .summary {
+    grid-template-columns: 1fr;
+  }
+
+  .expense-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .expense-item > div:last-child {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 450px) {
+  .summary {
+    grid-template-columns: 1fr;
+  }
+
+  .expense-section {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .card p {
+    font-size: 22px;
+  }
+
+  .expense-item > div:last-child {
+    align-items: flex-start;
+  }
+}
+.pdf-button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #6c5ce7;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.pdf-button:hover {
+  background: #5848d6;
+}
